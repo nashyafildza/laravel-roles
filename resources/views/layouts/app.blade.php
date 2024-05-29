@@ -47,12 +47,16 @@
                             @canany(['create-role', 'edit-role', 'delete-role'])
                                 <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Roles</a></li>
                             @endcanany
-                            @canany(['create-user', 'edit-user', 'delete-user'])
+                            @canany(['create-user', 'edit-user', 'delete-user', 'view-user'])
                                 <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
                             @endcanany
-                            @canany(['create-product', 'edit-product', 'delete-product'])
-                                <li><a class="nav-link" href="{{ route('products.index') }}">Manage Products</a></li>
+                            @canany(['create-book', 'edit-book', 'delete-book', 'view-book'])
+                                <li><a class="nav-link" href="{{ route('books.index') }}">Manage Books</a></li>
                             @endcanany
+                            @canany(['create-employee', 'edit-employee', 'delete-employee', 'view-employee'])
+                                <li><a class="nav-link" href="{{ route('employees.index') }}">Manage Employees</a></li>
+                            @endcanany
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -88,7 +92,7 @@
                         @yield('content')
                         <div class="row justify-content-center text-center mt-3">
                             <div class="col-md-12">
-                                <p>Back to Page: <a href="{{url('/')}}"><strong>Halaman Utama</strong></a></p>
+                                <p>Back to Page: <a href="{{url('/home')}}"><strong>Halaman Utama</strong></a></p>
                                 <p>@copyright <a href="#"><strong>Web Developer</strong></a></p>
                             </div>
                         </div>

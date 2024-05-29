@@ -13,36 +13,24 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
+        
         Role::create(['name' => 'Super Admin']);
         $admin = Role::create(['name' => 'Admin']);
-        $Operator = Role::create(['name' => 'Operator']);
-        $adminbaak = Role::create(['name' => 'Admin BAAK']);
-        $adminkeuangan = Role::create(['name' => 'Admin Keuangan']);
-        $mahasiswa = Role::create(['name' => 'Mahasiswa']);
+        $pengunjung = Role::create(['name' => 'Pengunjung']);
         $admin->givePermissionTo([
             'create-user',
             'edit-user',
             'delete-user',
-            'create-product',
-            'edit-product',
-            'delete-product'
+            'create-book',
+            'edit-book',
+            'delete-book',
+            'view-employee'
         ]);
-        $Operator->givePermissionTo([
-            'create-product',
-            'edit-product',
-            'delete-product'
-        ]);
-        $adminbaak->givePermissionTo([
-            'create-user',
-            'edit-user',
-            'delete-user',
+        
 
-        ]);
-        $adminkeuangan->givePermissionTo([
-            'view-user'
-        ]);
-        $mahasiswa->givePermissionTo([
-            'edit-user',
+        $pengunjung->givePermissionTo([
+            'view-book',
+
         ]);
     }
 }

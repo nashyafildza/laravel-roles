@@ -16,45 +16,24 @@ class SuperAdminSeeder extends Seeder
     {
         // Creating Super Admin User 
         $superAdmin = User::create([
-            'name' => 'Rivo',
+            'name' => 'Nashya',
             'email' => 'superadmin@roles.id',
             'password' => Hash::make('123456')
         ]);
         $superAdmin->assignRole('Super Admin');
-        // Creating Admin User 
+        
         $admin = User::create([
-            'name' => 'Meri',
+            'name' => 'Shafa',
             'email' => 'admin@roles.id',
             'password' => Hash::make('123456')
         ]);
         $admin->assignRole('Admin');
-        // Creating Product Manager User 
-        $productManager = User::create([
-            'name' => 'Fahri',
-            'email' => 'operator@roles.id',
-            'password' => Hash::make('123456')
-        ]);
-        $productManager->assignRole('Operator');
 
-        $adminbaak = User::create([
-            'name' => 'Adinda',
-            'email' => 'baak@roles.id',
-            'password' => Hash::make('123456')
-        ]);
-        $adminbaak->assignRole('Admin BAAK');
-
-        $adminKeuangan = User::create([
-            'name' => 'Puan',
-            'email' => 'keuangan@roles.id',
-            'password' => Hash::make('123456')
-        ]);
-        $adminKeuangan->assignRole('Admin Keuangan');
-
-        $mahasiswa = User::create([
+        $pengunjung = User::create([
             'name' => 'Erdika',
-            'email' => 'mahasiswa@roles.id',
+            'email' => 'pengunjung@roles.id',
             'password' => Hash::make('123456')
         ]);
-        $mahasiswa->assignRole('Mahasiswa');
+        $pengunjung->assignRole('Pengunjung');
     }
 }
